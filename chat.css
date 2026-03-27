@@ -13,13 +13,14 @@ body {
 /* Sidebar */
 .chat-sidebar {
   width: 260px;
-  background: #1e293b;
+  background: #0f172a;
   color: white;
   padding: 15px;
 }
 
 .chat-sidebar h3 {
   margin-top: 0;
+
 }
 
 .sidebar-menu {
@@ -63,12 +64,14 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #3d3d4b;
+  background-image: url(index/img/fundo-chat2.jpeg);
+  background-size: 100%;
 }
 
 /* Header */
 .chat-header {
   padding: 15px;
+  background-color: #0f172a;
   border-bottom: 1px solid #1e293b;
   color: white;
 }
@@ -87,7 +90,7 @@ body {
 .msg {
   max-width: 60%;
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 8px;
   position: relative;
   font-size: 14px;
 }
@@ -106,6 +109,10 @@ body {
   align-self: flex-end;
 }
 
+.msg strong{
+  color: orangered;
+}
+
 /* Horário */
 .msg span {
   display: block;
@@ -116,10 +123,18 @@ body {
 }
 
 /* Input */
+
+.chat-input-wrapper {
+  border-top: 1px solid #1e293b;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #0f172a;
+}
+
 .chat-input {
   display: flex;
-  padding: 10px;
-  border-top: 1px solid #1e293b;
 }
 
 .chat-input input {
@@ -139,4 +154,12 @@ body {
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.chat-footer-image {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px dashed #64748b;
 }

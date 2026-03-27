@@ -49,14 +49,19 @@
     </div>
 
     <!-- Input -->
-    <div class="chat-input">
-      <input 
-        type="text" 
-        id="mensagem" 
-        placeholder="Digite uma mensagem..."
-        onkeypress="if(event.key === 'Enter') enviar()"
-      >
-      <button onclick="enviar()">➤</button>
+    <div class="chat-input-wrapper">
+      <div class="chat-input">
+        <input 
+          type="text" 
+          id="mensagem" 
+          placeholder="Digite uma mensagem..."
+          onkeypress="if(event.key === 'Enter') enviar()"
+        >
+        <button onclick="enviar()">➤</button>
+      </div>
+
+      <!-- Caminho da imagem para você substituir manualmente -->
+  
     </div>
 
   </main>
@@ -126,7 +131,7 @@
   }
 
   return "--/--/---- --:--";
-  
+
   }
 
 function adicionarMensagem(usuario, texto, hora) {
