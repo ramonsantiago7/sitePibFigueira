@@ -53,8 +53,9 @@ io.on("connection", (socket) => {
 
 socket.on("mensagem", (msg) => {
   const { usuario, texto } = msg;
+  const dataEnvio = new Date();
 
-  const hora = new Date().toLocaleTimeString([], {
+  const hora = dataEnvio.toLocaleTimeString([], {
     hour: '2-digit',
     minute: '2-digit'
   });
@@ -73,7 +74,8 @@ socket.on("mensagem", (msg) => {
     usuario,
     texto,
     mensagem: texto,
-    hora
+    hora,
+    data_envio: dataEnvio.toISOString()
   });
 });
 
