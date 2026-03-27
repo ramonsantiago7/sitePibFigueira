@@ -18,6 +18,30 @@ body {
   padding: 15px;
 }
 
+.chat-sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sidebar-menu a {
+  color: #e2e8f0;
+  text-decoration: none;
+  background: #334155;
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: 0.2s;
+}
+
+.sidebar-menu a:hover {
+  background: #475569;
+}
+
 .chat-user {
   padding: 10px;
   border-radius: 8px;

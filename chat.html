@@ -26,7 +26,13 @@
 
   <!-- Lista de conversas -->
   <aside class="chat-sidebar">
-    <h3>Chats</h3>
+    <h3>Menu</h3>
+    <nav class="sidebar-menu" aria-label="Menu lateral">
+      <a href="/index/index.html#inicio">Início</a>
+      <a href="/index/index.html#sobre">Sobre</a>
+      <a href="/index/index.html#programacao">Programação</a>
+      <a href="/index/index.html#localizacao">Localização</a>
+    </nav>
   </aside>
 
   <!-- Área do chat -->
@@ -94,17 +100,28 @@
   }
 
   // adicionar mensagem (AGORA COM ESTILO)
-  function formatarHora(hora, dataEnvio) {
-  if (hora && hora !== "null") return hora;
+function formatarHora(hora, dataEnvio) {
+  const formatarDataHora = (data) => {
+    const dataFormatada = data.toLocaleDateString("pt-BR");
+    const horaFormatada = data.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    return `${dataFormatada} ${horaFormatada}`;
+  };
 
   if (dataEnvio) {
     const data = new Date(dataEnvio);
     if (!Number.isNaN(data.getTime())) {
-      return data.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      return formatarDataHora(data);
     }
   }
 
-  return "--:--";
+  if (hora && hora !== "null") return hora;
+
+  const agora = new Date();
+  if (!Number.isNaN(agora.getTime())) {
+    return formatarDataHora(agora);
+  }
+
+  return "--/--/---- --:--";
 }
 
 function adicionarMensagem(usuario, texto, hora) {
