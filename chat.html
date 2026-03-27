@@ -83,13 +83,30 @@
     chat.innerHTML = "";
 
     dados.forEach(msg => {
-      adicionarMensagem(msg.usuario, msg.mensagem, msg.hora);
+      adicionarMensagem(
+        msg.usuario,
+        msg.mensagem ?? msg.texto ?? "",
+        formatarHora(msg.hora, msg.data_envio)
+      );
     });
 
     scrollFinal();
   }
 
   // adicionar mensagem (AGORA COM ESTILO)
+  function formatarHora(hora, dataEnvio) {
+  if (hora && hora !== "null") return hora;
+
+  if (dataEnvio) {
+    const data = new Date(dataEnvio);
+    if (!Number.isNaN(data.getTime())) {
+      return data.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    }
+  }
+
+  return "--:--";
+}
+
 function adicionarMensagem(usuario, texto, hora) {
   const div = document.createElement("div");
 
@@ -100,7 +117,7 @@ function adicionarMensagem(usuario, texto, hora) {
   div.innerHTML = `
     ${usuario !== usuarioAtual ? `<strong>${usuario}</strong><br>` : ""}
     ${texto}
-    <span>${hora}</span>
+    <span>${hora || "--:--"}</span>
   `;
 
   chat.appendChild(div);
@@ -122,7 +139,11 @@ function enviar() {
 
   // receber mensagem em tempo real
   socket.on("mensagem", (msg) => {
-    adicionarMensagem(msg.usuario, msg.texto, msg.hora);
+     adicionarMensagem(
+      msg.usuario,
+      msg.texto ?? msg.mensagem ?? "",
+      formatarHora(msg.hora, msg.data_envio)
+    );
     scrollFinal();
   });
 

@@ -71,6 +71,7 @@ socket.on("mensagem", (msg) => {
   // enviar já com hora fixa
   io.emit("mensagem", {
     usuario,
+    texto,
     mensagem: texto,
     hora
   });
@@ -117,17 +118,5 @@ app.post("/login", (req, res) => {
         mensagem: "Email ou senha inválidos"
       });
     }
-  });
-});
-
-app.get("/mensagens", (req, res) => {
-  const sql = "SELECT * FROM mensagens ORDER BY data_envio ASC";
-
-  db.query(sql, (err, result) => {
-    if (err) {
-      return res.json({ erro: err });
-    }
-
-    res.json(result);
   });
 });
