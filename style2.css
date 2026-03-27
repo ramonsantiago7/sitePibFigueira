@@ -1,0 +1,247 @@
+:root {
+  --color-primary: #2f6ea5;
+  --color-primary-dark: #214f78;
+  --color-accent: #edf4fb;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f7fa;
+  --color-text: #203040;
+  --color-text-soft: #5d6b79;
+  --color-border: #d8e0e8;
+  --shadow-soft: 0 16px 40px rgba(24, 52, 79, 0.08);
+  --radius-large: 24px;
+  --radius-medium: 18px;
+  --radius-small: 12px;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
+  height: 100vh;
+}
+
+.botoes {
+  display: flex;
+  gap: 12px;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+.botoes a {
+  padding: 10px 18px;
+  border-radius: var(--radius-small);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.login {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.login:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+.cadastro {
+  background: var(--color-primary);
+  color: white;
+  border: 2px solid transparent;
+}
+.cadastro:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(47, 110, 165, 0.3);
+}
+
+.cadastro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.cadastro:hover::after {
+  left: 130%;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(216, 224, 232, 0.8);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  min-height: 78px;
+}
+
+.site-brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  padding-top: 1rem;
+}
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  display: inline-flex;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  color: var(--color-text-soft);
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.nav-list::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.container {
+  width: min(100% - 2rem, 1120px);
+  margin: 0 auto;
+}
+
+/* Container central */
+.form-container {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  margin: 60px auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  background: #020617;
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+/* Botões */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+/* Chat */
+#chat {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left;
+  height: 300px;
+}
+
+/*li {
+  background: #334155;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}*/
+
+li strong{
+    color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .site-brand {
+    flex: 1;
+  }
+
+  .botoes {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .site-nav {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-list {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

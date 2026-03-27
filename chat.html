@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+  <!--<header class="site-header">
+      <div class="container header-content">
+
+        <a href="/index/index.html" class="site-brand">PIB Figueira</a>
+
+        <nav class="site-nav" aria-label="Menu principal">
+          <ul class="nav-list">
+            <li><a href="/index/index.html#inicio">Início</a></li>
+            <li><a href="/index/index.html#sobre">Sobre</a></li>
+            <li><a href="/index/index.html#programacao">Programação</a></li>
+            <li><a href="/index/index.html#localizacao">Localização</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>-->
+
+  <div class="chat-container">
+
+  <!-- Lista de conversas -->
+  <aside class="chat-sidebar">
+    <h3>Chats</h3>
+  </aside>
+
+  <!-- Área do chat -->
+  <main class="chat-main">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <strong id="nomeChat">Chat Geral</strong>
+    </div>
+
+    <!-- Mensagens -->
+    <div class="chat-messages" id="chat">
+      <!-- mensagens entram aqui -->
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input">
+      <input 
+        type="text" 
+        id="mensagem" 
+        placeholder="Digite uma mensagem..."
+        onkeypress="if(event.key === 'Enter') enviar()"
+      >
+      <button onclick="enviar()">➤</button>
+    </div>
+
+  </main>
+
+</div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+  <script>
+  if (!localStorage.getItem("usuario")) {
+    window.location.href = "login.html";
+  }
+
+  const input = document.getElementById("mensagem");
+  input.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    enviar();
+  }
+});
+
+  const socket = io("http://localhost:3000");
+  const chat = document.getElementById("chat");
+  const usuarioAtual = localStorage.getItem("usuario");
+
+  // carregar histórico
+  async function carregarMensagens() {
+    const res = await fetch("http://localhost:3000/mensagens");
+    const dados = await res.json();
+
+    chat.innerHTML = "";
+
+    dados.forEach(msg => {
+      adicionarMensagem(msg.usuario, msg.mensagem, msg.hora);
+    });
+
+    scrollFinal();
+  }
+
+  // adicionar mensagem (AGORA COM ESTILO)
+function adicionarMensagem(usuario, texto, hora) {
+  const div = document.createElement("div");
+
+  const tipo = usuario === usuarioAtual ? "enviada" : "recebida";
+
+  div.classList.add("msg", tipo);
+
+  div.innerHTML = `
+    ${usuario !== usuarioAtual ? `<strong>${usuario}</strong><br>` : ""}
+    ${texto}
+    <span>${hora}</span>
+  `;
+
+  chat.appendChild(div);
+}
+
+  // enviar mensagem
+function enviar() {
+  
+
+  const texto = input.value;
+  const usuario = usuarioAtual;
+
+  if (!texto) return;
+
+  socket.emit("mensagem", { usuario, texto });
+
+  input.value = "";
+}
+
+  // receber mensagem em tempo real
+  socket.on("mensagem", (msg) => {
+    adicionarMensagem(msg.usuario, msg.texto, msg.hora);
+    scrollFinal();
+  });
+
+  // scroll automático
+  function scrollFinal() {
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  // carregar histórico ao abrir
+  carregarMensagens();
+</script>
+</body>
+</html>

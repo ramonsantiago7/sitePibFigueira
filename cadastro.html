@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <header class="site-header">
+      <div class="container header-content">
+
+        <a href="/index/index.html" class="site-brand">PIB Figueira</a>
+
+        <nav class="site-nav" aria-label="Menu principal">
+          <ul class="nav-list">
+            <li><a href="/index/index.html#inicio">Início</a></li>
+            <li><a href="/index/index.html#sobre">Sobre</a></li>
+            <li><a href="/index/index.html#programacao">Programação</a></li>
+            <li><a href="/index/index.html#localizacao">Localização</a></li>
+          </ul>
+        </nav>
+
+        <div class="botoes">
+          <a href="/login.html" class="login" type="button">Login</a>
+          <a href="/cadastro.html" class="cadastro">Cadastro</a>
+        </div>
+
+      </div>
+    </header>
+
+  <div class="form-container">
+    <h2>Cadastro</h2>
+
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="senha" placeholder="Senha">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+  </div>
+
+  <script>
+    async function cadastrar() {
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      const resposta = await fetch("http://localhost:3000/cadastro", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ nome, email, senha })
+      });
+
+      const dados = await resposta.json();
+      alert(dados.mensagem);
+    }
+  </script>
+
+</body>
+</html>
