@@ -466,12 +466,15 @@ a {
   }
 
   .site-nav {
-    overflow-x: auto;
+    overflow-x: visible;
+    width: 100%;
   }
 
   .nav-list {
-    width: max-content;
-    min-width: 100%;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .hero-section {
@@ -508,6 +511,7 @@ a {
 
   .nav-list {
     gap: 0.35rem;
+    flex-direction: column;
   }
 
   .nav-list a,
