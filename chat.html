@@ -102,18 +102,23 @@
   // adicionar mensagem (AGORA COM ESTILO)
   function formatarHora(hora, dataEnvio) {
   const formatarDataHora = (data) => {
-    const dataFormatada = data.toLocaleDateString("pt-BR");
-    const horaFormatada = data.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    return `${dataFormatada} ${horaFormatada}`;
+      const dataFormatada = data.toLocaleDateString("pt-BR");
+      const horaFormatada = data.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      return `${dataFormatada} ${horaFormatada}`;
+    };
 
-  if (dataEnvio) {
-    const data = new Date(dataEnvio);
-    if (!Number.isNaN(data.getTime())) {
-      return formatarDataHora(data);
-    }
+    if (dataEnvio) {
+      const data = new Date(dataEnvio);
+      if (!Number.isNaN(data.getTime())) {
+        return formatarDataHora(data);
+      }
   }
 
-  if (hora && hora !== "null") return hora;
+  if (hora && hora !== "null") {
+      const [h, m] = String(hora).split(":");
+      if (h && m) return `${h.padStart(2, "0")}:${m.padStart(2, "0")}`;
+      return String(hora);
+    }
 
   const agora = new Date();
   if (!Number.isNaN(agora.getTime())) {
@@ -121,7 +126,8 @@
   }
 
   return "--/--/---- --:--";
-}}
+  
+  }
 
 function adicionarMensagem(usuario, texto, hora) {
   const div = document.createElement("div");
