@@ -146,20 +146,36 @@ a {
   margin: 0;
 }
 
-.nav-list a {
+.nav-list > li > a {
   display: inline-flex;
-  padding: 0.75rem 1rem;
-  border-radius: 999px;
+  padding: 0.75rem 0.25rem;
+  position: relative;
   color: var(--color-text-soft);
-  transition: background-color 0.25s ease, color 0.25s ease,
-    transform 0.25s ease;
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
-.nav-list a:hover,
-.nav-list a:focus-visible {
-  background-color: var(--color-accent);
+.nav-list > li > a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.2rem;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-dark);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s ease;
+}
+
+.nav-list > li > a:hover,
+.nav-list > li > a:focus-visible {
   color: var(--color-primary-dark);
-  transform: translateY(-1px);
+}
+
+.nav-list > li > a:hover::after,
+.nav-list > li > a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .dropdown {
@@ -195,6 +211,12 @@ a {
   display: block;
 }
 
+.submenu li:hover {
+  background: #f0f0f0;
+  border-radius: 15px;
+  transition: all 0.7s;
+}
+
 /* efeito hover */
 .dropdown:hover .submenu {
   opacity: 1;
@@ -213,6 +235,38 @@ a {
   background:
     url('img/banner-fundo-pibf.png') center/contain no-repeat;
   color: #ffffff;
+}
+
+/* posicionamento dos ícones */
+.hero-social {
+  position: absolute;
+  bottom: 10px; /* ajusta a altura */
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 15px;
+}
+
+/* estilo dos ícones */
+.hero-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.hero-social a:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.3);
 }
 
 
