@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index/index.html" },
+    { "source": "/sobre", "destination": "/sobre.html" },
+    { "source": "/cursos", "destination": "/cursos.html" },
+    { "source": "/contribua", "destination": "/contribua.html" },
+    { "source": "/marcaRadical", "destination": "/marcaRadical.html" },
+    { "source": "/missoes", "destination": "/missoes.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/cadastro", "destination": "/cadastro.html" },
+    { "source": "/chat", "destination": "/chat.html" }
+  ]
+}
