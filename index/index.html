@@ -11,7 +11,6 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
@@ -46,7 +45,10 @@
       <div class="container header-content">
 
         <div class="brand-actions">
-          <a href="#inicio" class="site-brand">PIB Figueira</a>
+          <a href="#inicio" class="site-brand">
+            <img src="img/LOGO-PIB-TRANSPARENTE.png" alt="Logo da PIB Figueira" class="site-brand-logo">
+            <span>PIB Figueira</span>
+          </a>
 
           <div class="botoes">
             <a href="/login.html" class="login" type="button">Login</a>
@@ -56,7 +58,7 @@
 
         <nav class="site-nav" aria-label="Menu principal">
           <ul class="nav-list">
-            <li><a href="#inicio">Início</a></li>
+            <li><a href="index/index.html">Início</a></li>
 
             <li class="dropdown">
               <a href="/sobre.html">Sobre</a>
@@ -69,33 +71,33 @@
             </li>
 
             <li class="dropdown">
-              <a href="#programacao">Programação</a>
+              <a href="#">Programação</a>
               
               <ul class="submenu">
-                <li><a href="#">...</a></li>
+                <li><a href="pg.html">Pg's</a></li>
                 <li><a href="#">...</a></li>
                 <li><a href="#">...</a></li>
               </ul>
             </li>
 
             <li class="dropdown">
-              <a href="#estudos-pg">Ministérios</a>
+              <a href="ministerios.html">Ministérios</a>
               
               <ul class="submenu">
-                <li><a href="#">Marca Radical</a></li>
-                <li><a href="#">...</a></li>
-                <li><a href="#">...</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="#contribua">Contribua</a>
-              
-              <ul class="submenu">
-                <li><a href="#">Oferta</a></li>
-                <li><a href="#">Dízimo</a></li>
+                <li><a href="/marcaRadical.html">Marca Radical</a></li>
                 <li><a href="#">Missões</a></li>
-                <li><a href="#">Obra</a></li>
+                <li><a href="#">...</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="contribua.html">Contribua</a>
+              
+              <ul class="submenu">
+                <li><a href="/contribua.html#oferta">Oferta</a></li>
+                <li><a href="/contribua.html#radical">Marca Radical</a></li>
+                <li><a href="/contribua.html#missoes">Missões</a></li>
+                <li><a href="/contribua.html#obra">Obra</a></li>
               </ul>
             </li>
           </ul>
@@ -337,10 +339,55 @@
     <!-- Rodapé -->
     <footer class="site-footer">
       <div class="container footer-content">
-        <strong>PIB Figueira</strong>
-        <p>Todos são bem-vindos.</p>
+        <div class="footer-brand">
+          <img src="img/LOGO-PIB-BRANCO.png" alt="Logo da PIB Figueira" />
+          <p>
+            Estr. Ambaí Figueira, 1351<br />
+            Figueiras, Nova Iguaçu - RJ,<br />
+            26295-211
+          </p>
+          <p>Tel: (21) 0000-0000</p>
 
-        
+          <div class="footer-links">
+          <h3>Igreja</h3>
+          <ul>
+            <li><a href="/sobre.html">Conheça-nos</a></li>
+            <li><a href="#programacao">Células</a></li>
+            <li><a href="#contribua">Contribuição</a></li>
+            <li><a href="#programacao">Agenda</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h3>Links úteis</h3>
+          <ul>
+            <li><a href="#">Pedidos de Oração</a></li>
+            <li><a href="#estudos-pg">Conteúdos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h3>Informações</h3>
+          <ul>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#localizacao">Onde Estamos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h3>Redes sociais</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/primeiraigrejabatistaemfigueira" target="_blank">facebook</a></li>
+            <li><a href="https://www.instagram.com/pibfigueira/" target="_blank">instagram</a></li>
+            <li><a href="https://www.youtube.com/@pibemfigueira8922/streams" target="_blank">youtube</a></li>
+            <li><a href="#">flickr</a></li>
+            <li><a href="#">x</a></li>
+          </ul>
+        </div>
+        </div>
+
+
         <small>&copy; 2026 PIB Figueira. Todos os direitos reservados.</small>
       </div>
     </footer>
