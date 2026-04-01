@@ -814,7 +814,7 @@ a {
   }
 
   .hero-section {
-    min-height: 260px;
+    min-height: 780px;
     padding: 3rem 0;
     background-image: url('../img/banner-fundo-mobile.png');
     background-size: cover;
@@ -857,7 +857,7 @@ a {
 @media (max-width: 560px) {
 
   .hero-section {
-    min-height: 220px;
+    min-height: 530px;
     padding: 2.5rem 0;
   }
 
