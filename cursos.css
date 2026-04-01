@@ -149,7 +149,7 @@
 
 .courses-page .course-item {
   border: none;
-  background: var(--course-orange);
+  background: var(--color-primary);
   color: #fff;
   border-radius: 9px;
   font-weight: 800;
@@ -216,7 +216,7 @@
 }
 
 .courses-page .action-btn {
-  background: var(--course-orange);
+  background: var(--color-primary);
   color: #fff;
 }
 

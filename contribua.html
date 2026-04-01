@@ -9,6 +9,15 @@
       content="Página de contribuições da PIB Figueira com opções para ofertas, Marca Radical, missões e obra."
     />
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/android-chrome-512x512.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +34,15 @@
       <div class="container header-content">
 
         <div class="brand-actions">
-          <a href="index/index.html" class="site-brand">PIB Figueira</a>
+          <a href="index/index.html" class="site-brand">
+            <img src="img/LOGO-PIB-TRANSPARENTE.png" alt="Logo da PIB Figueira" class="site-brand-logo">
+            <span>PIB Figueira</span>
+          </a>
+
+          <div class="botoes">
+            <a href="/login.html" class="login" type="button">Login</a>
+            <a href="/cadastro.html" class="cadastro">Cadastro</a>
+          </div>
         </div>
 
         <nav class="site-nav" aria-label="Menu principal">
@@ -34,11 +51,11 @@
 
             <li class="dropdown">
               <a href="#">Igreja</a>
-            
+
               <ul class="submenu">
                 <li><a href="#localizacao">Onde Estamos</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="/sobre.html">Sobre nós</a></li>
+                <li><a href="/cursos.html">Cursos</a></li>
               </ul>
             </li>
 
@@ -58,18 +75,18 @@
               <ul class="submenu">
                 <li><a href="/marcaRadical.html">Marca Radical</a></li>
                 <li><a href="/missoes.html">Missões</a></li>
-                <li><a href="#">...</a></li>
+                <li><a href="#">Mfam</a></li>
               </ul>
             </li>
 
             <li class="dropdown">
-              <a href="contribua.html">Contribua</a>
+              <a href="/contribua.html">Contribua</a>
               
               <ul class="submenu">
-                <li><a href="contribua.html#oferta">Oferta</a></li>
-                <li><a href="contribua.html#radical">Marca Radical</a></li>
-                <li><a href="contribua.html#missoes">Missões</a></li>
-                <li><a href="contribua.html#obra">Obra</a></li>
+                <li><a href="/contribua.html">Oferta</a></li>
+                <li><a href="/contribua.html#radical">Marca Radical</a></li>
+                <li><a href="/contribua.html#missoes">Missões</a></li>
+                <li><a href="/contribua.html#obra">Obra</a></li>
               </ul>
             </li>
           </ul>
@@ -100,7 +117,7 @@
           </div>
 
           <figure class="pix-box" aria-label="QR Code para ofertas gerais">
-            <img src="index/img/qrcode-pix-placeholder.svg" alt="QR Code Pix para ofertas gerais" />
+            <img src="img/qrcode-pix-placeholder.svg" alt="QR Code Pix para ofertas gerais" />
           </figure>
         </div>
       </section>
@@ -116,7 +133,7 @@
           </div>
 
           <figure class="pix-box" aria-label="QR Code para Marca Radical">
-            <img src="index/img/qrcode-pix-placeholder.svg" alt="QR Code Pix para Marca Radical" />
+            <img src="img/qrcode-pix-placeholder.svg" alt="QR Code Pix para Marca Radical" />
           </figure>
         </div>
       </section>
@@ -132,7 +149,7 @@
           </div>
 
           <figure class="pix-box" aria-label="QR Code para Missões">
-            <img src="index/img/qrcode-pix-placeholder.svg" alt="QR Code Pix para missões" />
+            <img src="img/qrcode-pix-placeholder.svg" alt="QR Code Pix para missões" />
           </figure>
         </div>
       </section>
@@ -143,12 +160,12 @@
             <h2 id="titulo-obra">Obra</h2>
             <p>
               Direcione sua oferta para melhorias estruturais e manutenção,
-              colaborando com o crescimento e a organização da casa de oração.
+              colaborando com o crescimento e a organização da casa de oração. Não se esqueça de botar 0,26 centavos ao final. Exemplo: R$50,26
             </p>
           </div>
 
           <figure class="pix-box" aria-label="QR Code para Obra">
-            <img src="index/img/qrcode-pix-placeholder.svg" alt="QR Code Pix para obra" />
+            <img src="img/qrcode-pix-placeholder.svg" alt="QR Code Pix para obra" />
           </figure>
         </div>
       </section>
@@ -158,7 +175,7 @@
     <footer class="site-footer">
       <div class="container footer-content">
         <div class="footer-brand">
-          <img src="index/img/LOGO-PIB-BRANCO.png" alt="Logo da PIB Figueira" />
+          <img src="img/LOGO-PIB-BRANCO.png" alt="Logo da PIB Figueira" />
           <p>
             Estr. Ambaí Figueira, 1351<br />
             Figueiras, Nova Iguaçu - RJ,<br />

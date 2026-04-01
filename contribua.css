@@ -109,6 +109,6 @@
   }
 
   .pix-box {
-    justify-self: start;
+    margin: auto;
   }
 }
