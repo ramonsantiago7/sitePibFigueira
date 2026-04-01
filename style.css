@@ -814,8 +814,11 @@ a {
   }
 
   .hero-section {
-    min-height: auto;
-    padding: 6rem 0 4rem;
+    min-height: 260px;
+    padding: 3rem 0;
+    background-image: url('../img/banner-fundo-mobile.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .cell-cta-art {
@@ -852,6 +855,23 @@ a {
 }
 
 @media (max-width: 560px) {
+
+  .hero-section {
+    min-height: 220px;
+    padding: 2.5rem 0;
+  }
+
+  .hero-social {
+    bottom: 8px;
+    gap: 12px;
+  }
+
+  .hero-social a {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
   .content-section {
     padding: 4rem 0;
   }
