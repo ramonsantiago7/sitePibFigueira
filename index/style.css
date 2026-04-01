@@ -216,12 +216,13 @@ a {
   box-shadow: opx 12px 24px rgba(0, 0, 0, 0.12);
 
   list-style: none;
+  margin: 0;
 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity 0.25s ease, transfor, 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.25s ease, transform, 0.25s ease, visibility 0.25s ease;
 }
 
 /* itens do submenu */
@@ -802,6 +803,7 @@ a {
     transition: max-height 0.25s ease, opacity 0.2s ease, visibility 0.2s ease;
   }
 
+  .dropdown.submenu-open .submenu,
   .dropdown:hover .submenu,
   .dropdown:focus-within .submenu {
     max-height: 500px;
