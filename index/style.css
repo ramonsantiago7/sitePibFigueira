@@ -200,6 +200,7 @@ a {
   background: white;
   padding: 10px 0;
   min-width: 200px;
+  border-radius: 5px;
 
   list-style: none;
 
@@ -218,12 +219,34 @@ a {
   color: black;
   text-decoration: none;
   display: block;
+  position: relative;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
 }
 
-.submenu li:hover {
-  background: #f0f0f0;
-  border-radius: 15px;
-  transition: all 0.7s;
+.submenu > li > a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px; 
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-primary-dark);
+
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s ease;
+}
+
+.submenu > li > a:hover,
+.submenu > li > a:focus-visible {
+  color: var(--color-primary-dark);
+}
+
+.submenu > li > a:hover::after,
+.submenu > li > a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 /* efeito hover */
@@ -445,7 +468,6 @@ a {
   height: 72px;
   background: #22313f;
 }
-
 
 .section-alt {
   background-color: var(--color-surface-alt);
@@ -721,6 +743,23 @@ a {
   .cell-cta-art {
     min-height: 240px;
   }
+
+  .cell-cta-shape-lg {
+  width: 75px;
+  height: 75px;
+}
+
+.cell-cta-shape-md {
+  width: 45px;
+  height: 45px;
+  background: var(--color-primary);
+}
+
+.cell-cta-shape-sm {
+  width: 28px;
+  height: 28px;
+  background: #22313f;
+}
 
   .footer-content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
