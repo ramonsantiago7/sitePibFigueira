@@ -205,20 +205,23 @@ a {
 /* submenu escondido */
 .submenu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
+  z-index: 30;
 
   background: white;
   padding: 10px 0;
   min-width: 200px;
   border-radius: 5px;
+  box-shadow: opx 12px 24px rgba(0, 0, 0, 0.12);
 
   list-style: none;
 
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transform: translateY(10px);
-  transition: 0.3s;
+  transition: opacity 0.25s ease, transfor, 0.25s ease, visibility 0.25s ease;
 }
 
 /* itens do submenu */
@@ -261,9 +264,10 @@ a {
 }
 
 /* efeito hover */
-.dropdown:hover .submenu {
+.dropdown:hover, .dropdown:focus-within, .submenu  {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
@@ -276,7 +280,7 @@ a {
   margin-top: 10px;
   width: 100%;
   background:
-    url('img/banner-fundo-pibf.png') center/contain no-repeat;
+    url('../img/banner-fundo-pibf.png') center/contain no-repeat;
   color: #ffffff;
 }
 
