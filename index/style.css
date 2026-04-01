@@ -561,7 +561,7 @@ a {
 }
 
 .footer-brand img {
-  width: min(250px, 100%);
+  width: min(100px, 100%);
   margin-bottom: 2rem;
 }
 
@@ -572,11 +572,11 @@ a {
 }
 
 .footer-links h3 {
-  margin: 0 0 1.1rem;
+  margin: 5rem 0 1.1rem;
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ff6a00;
+  color: #2f6ea5;
 }
 
 .footer-links ul {
@@ -595,6 +595,13 @@ a {
 
 .footer-links a:hover {
   opacity: 0.75;
+}
+
+.site-footer small {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 840px) {
