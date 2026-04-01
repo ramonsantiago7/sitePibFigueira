@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // conexão com banco
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "r4m0Nz11N.",
@@ -24,11 +24,11 @@ db.connect(err => {
   } else {
     console.log("Conectado ao MySQL 🔥");
   }
-});
+}); */
 
 // rota de cadastro
 app.post("/cadastro", (req, res) => {
-  const { nome, email, senha } = req.body;
+  /*const { nome, email, senha } = req.body;
 
   const sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
 
@@ -37,7 +37,12 @@ app.post("/cadastro", (req, res) => {
       return res.json({ erro: err });
     }
     res.json({ mensagem: "Usuário cadastrado com sucesso!" });
+  }); */
+return res.status(503).json({
+    sucesso: false,
+    mensagem: "Cadastro desativado nesta versão hospedada no Vercel."
   });
+
 });
 
 // iniciar servidor
@@ -52,7 +57,7 @@ io.on("connection", (socket) => {
   console.log("Usuário conectado:", socket.id);
 
 socket.on("mensagem", (msg) => {
-  const { usuario, texto } = msg;
+  /*const { usuario, texto } = msg;
   const dataEnvio = new Date()
 
   const hora = dataEnvio.toLocaleTimeString([], {
@@ -76,7 +81,9 @@ socket.on("mensagem", (msg) => {
     mensagem: texto,
     hora,
     data_envio: dataEnvio.toISOString()
-  });
+  }); */
+
+  console.log("Chat desativado no deploy Vercel.");
 });
 
   socket.on("disconnect", () => {
@@ -85,7 +92,7 @@ socket.on("mensagem", (msg) => {
 });
 
 app.get("/mensagens", (req, res) => {
-  const sql = "SELECT * FROM mensagens ORDER BY data_envio ASC";
+  /*const sql = "SELECT * FROM mensagens ORDER BY data_envio ASC";
 
   db.query(sql, (err, result) => {
     if (err) {
@@ -94,7 +101,8 @@ app.get("/mensagens", (req, res) => {
     }
 
     res.json(result);
-  });
+  }); */
+  return res.status(503).json([])
 });
 
 server.listen(3000, () => {
@@ -102,7 +110,7 @@ server.listen(3000, () => {
 })
 
 app.post("/login", (req, res) => {
-  const { email, senha } = req.body;
+  /*const { email, senha } = req.body;
 
   const sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
 
@@ -119,6 +127,9 @@ app.post("/login", (req, res) => {
         sucesso: false,
         mensagem: "Email ou senha inválidos"
       });
-    }
+    } */
+   return res.status(503).json({
+    sucesso: false,
+    mensagem: "Login desativado nesta versão hospedada no Vercel."
   });
 });
