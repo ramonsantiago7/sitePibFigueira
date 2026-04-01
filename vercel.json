@@ -1,10 +1,8 @@
 {
-  "cleanUrls": true,
-  "redirects": [
-    { "source": "/", "destination": "/index", "permanent": false }
-  ],
+  "cleanUrls": false,
   "rewrites": [
     { "source": "/sobre", "destination": "/sobre.html" },
+    { "source": "/", "destination": "/index.html" },
     { "source": "/cursos", "destination": "/cursos.html" },
     { "source": "/contribua", "destination": "/contribua.html" },
     { "source": "/marcaRadical", "destination": "/marcaRadical.html" },
