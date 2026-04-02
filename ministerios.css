@@ -1,60 +1,55 @@
-/*
-  Estilos da página contribua.
-  Mantém a identidade do site e organiza as seções em faixas horizontais.
-*/
-
 :root {
   --contrib-hero-bg: #f4f6f8;
   --contrib-section-gap: 0;
 }
 
-.contrib-hero {
+.minis-hero {
   background: radial-gradient(circle at 85% 20%, rgba(47, 110, 165, 0.08) 0 32%, transparent 33%),
     radial-gradient(circle at 70% 30%, rgba(47, 110, 165, 0.07) 0 26%, transparent 27%),
     var(--contrib-hero-bg);
   padding: 5.5rem 0 4.5rem;
 }
 
-.contrib-hero-content {
+.minis-hero-content {
   max-width: 760px;
 }
 
-.contrib-hero h1 {
+.minis-hero h1 {
   margin: 0 0 1rem;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.15;
   color: var(--color-primary-dark);
 }
 
-.contrib-hero p {
+.minis-hero p {
   margin: 0;
   font-size: 1.12rem;
   color: var(--color-text);
 }
 
-.contrib-section {
+.minis-section {
   padding: 3.5rem 0;
   transition: filter 0.35s ease, transform 0.35s ease;
 }
 
-.contrib-section:hover {
+.minis-section:hover {
   filter: saturate(1.06);
 }
 
-.contrib-shell {
+.minis-shell {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(220px, 320px);
   gap: 2.5rem;
   align-items: center;
 }
 
-.contrib-text h2 {
+.minis-text h2 {
   margin: 0 0 0.85rem;
   font-size: clamp(1.55rem, 2.5vw, 2rem);
-  color: var(--color-primary-dark);
+  color: white;
 }
 
-.contrib-text p {
+.minis-text p {
   margin: 0;
   max-width: 62ch;
   color: var(--color-text);
@@ -76,65 +71,42 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 0.85rem;
 }
 
-.pix-copy-btn {
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  background: var(--color-primary-dark);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+.section-minis-reacender {
+  background: linear-gradient(120deg, #ff5303 0%, #f8ddd3 100%);
 }
 
-.pix-copy-btn:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(24, 52, 79, 0.22);
+.section-mfam {
+  background: linear-gradient(120deg, #f16161 0%, #f1d2d2 100%);
 }
 
-.pix-copy-btn:active {
-  transform: translateY(0);
+.section-minis-inf {
+  background: linear-gradient(120deg, #05fc6c 0%, #e0f9e4 100%);
 }
 
-.pix-copy-status {
-  min-height: 1.1rem;
-  margin: 0.6rem 0 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--color-primary-dark);
+.section-er {
+  background: linear-gradient(120deg, #0011ff 0%, #d2edf9 100%);
 }
 
-.section-ofertas {
-  background: linear-gradient(120deg, #e7f1fb 0%, #dcecfb 100%);
+.section-mr {
+    background: linear-gradient(120deg, #efff15 0%, #dbffde 100%);
 }
 
-.section-marca {
-  background: linear-gradient(120deg, #f5e8e8 0%, #f1d2d2 100%);
-}
-
-.section-missoes {
-  background: linear-gradient(120deg, #ecfbed 0%, #e0f9e4 100%);
-}
-
-.section-obra {
-  background: linear-gradient(120deg, #fff1e4 0%, #f9e6d2 100%);
+.section-radical {
+    background: linear-gradient(120deg, #ff0000 0%, #f7afaf 100%);
 }
 
 @media (max-width: 860px) {
-  .contrib-hero {
+  .minis-hero {
     padding: 4.25rem 0 3.25rem;
   }
 
-  .contrib-section {
+  .minis-section {
     padding: 2.75rem 0;
   }
 
-  .contrib-shell {
+  .minis-shell {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
